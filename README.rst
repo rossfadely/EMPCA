@@ -1,4 +1,3 @@
-
 EM PCA
 ===========================
 
@@ -7,10 +6,11 @@ Processing Systems 10, 626 <http://www.cs.nyu.edu/~roweis/papers/empca.pdf>`_
 
 
 Running 
+-------
 
 ::
 
-python demo.py
+  python demo.py
 
 will produce ``demo.png``, which ought to look similar to
 
