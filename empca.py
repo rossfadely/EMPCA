@@ -20,13 +20,14 @@ class EMPCA(object):
     max_iter   : Maximum number of iterations to run EM.
     check_iter : Interval number of EM iterations betwee
                  convergence checks.
+    subtract_mean: Subtract mean?  Recommended.
 
     To Do:
     ------
     - Automatic latent dimensionality determination.
     
     """
-    def __init__(self,data,M,var=None,
+    def __init__(self,data,M,var=None,subtract_mean=True,
                  max_iter=1000,check_iter=10,
                  tol=1.e-4):
         """
@@ -43,7 +44,8 @@ class EMPCA(object):
         self.lam = np.random.randn(self.D,self.M)
 
         # zero mean the data
-        self.zero_mean(var)
+        if subtract_mean:
+            self.zero_mean(var)
 
         # run EM
         self.run_EM(max_iter,tol,check_iter)
