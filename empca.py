@@ -61,6 +61,7 @@ class EMPCA(object):
                 np.sum(1.0 / var, axis=0)
         else:
             mean = np.mean(self.data, axis=0)
+        self.data -= mean[None, :]
 
     def run_EM(self,max_iter,tol,check_iter):
         """
